@@ -9,7 +9,7 @@ class PngQuant extends Common implements ToolsInterface
 {
     public function optimise()
     {
-        exec($this->binaryPath . ' --speed 1 --ext=.png --force ' . $this->imagePath, $aOutput, $iResult);
+        exec($this->binaryPath . ' --speed 1 --ext=.png --force "' . $this->imagePath . '"', $aOutput, $iResult);
         if ($iResult != 0)
         {
             throw new Exception('PNGOUT was Unable to optimise image, result:' . $iResult . ' File: ' . $this->binaryPath);
